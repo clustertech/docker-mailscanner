@@ -10,6 +10,6 @@ yum -y install MailScanner-5.2.1-1.rhel.noarch.rpm unrar-5.0.3-1.x86_64.rpm; \
 ms-configure --MTA=none --installEPEL=Y --installClamav=N --configClamav=N --installTNEF=Y --installUnrar=Y --installCPAN=Y --installDf=Y --SELPermissive=N --ignoreDeps=N --ramdiskSize=0; \
 sed -i 's/^run_mailscanner=0/run_mailscanner=1/' /etc/MailScanner/defaults; \
 rm -f /*.rpm /startpostfix.sh; \
-mkdir -p /var/spool/mqueue /var/spool/mqueue.in; \
+mkdir -p /var/spool/mqueue /var/spool/mqueue.in
 COPY . /
 ENTRYPOINT ["/tini", "/startmailscanner.sh"]
