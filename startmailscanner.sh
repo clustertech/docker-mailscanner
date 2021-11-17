@@ -1,5 +1,6 @@
 #!/bin/bash
 
+rm -f /var/run/*.pid /run/*.pid
 trap "postfix stop" SIGTERM
 rsyslogd
 crond
